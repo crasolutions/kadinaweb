@@ -1,133 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Acesso Ajuda Kadina</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
 
-  <script type="text/javascript" src="https://secure.logmeinrescue.com/InstantChat/InstantChat.aspx"></script>
+        <script type="text/javascript" src="https://secure.logmeinrescue.com/InstantChat/InstantChat.aspx"></script>
+        <script type="text/javascript">
+            function loadInstantChat(){
+                var ICLoader = new RescueInstantChatLoader();
+                ICLoader.ICContainer = "ICContainer";
+                ICLoader.HostedCSS = "https://secure.logmeinrescue.com/InstantChat/Standard/InstantChat.css";
+                ICLoader.HostedLanguagesForChatOnlyMode = "https://secure.logmeinrescue.com/InstantChat/LanguagesForChatOnlyMode.js";
+                ICLoader.HostedLanguagesForAppletMode = "https://secure.logmeinrescue.com/InstantChat/LanguagesForAppletMode.js";
+                ICLoader.PrivateCode = document.getElementById("Code").value;
+                ICLoader.Tracking0 = ""; /* optional */
+                ICLoader.Language = ""; /* optional */
+                ICLoader.PostMessageTargetOrigin = ""; /* optional (For implementation details, see the LogMeIn Rescue Customization and Integration Guide) */
+                ICLoader.HostedErrorHandler = function(ErrorName){} /* optional */
+                ICLoader.Start();}
+            function handleRebootOrRefresh(){
+                if ((window.location + "").indexOf("rescuewebsessionid") != -1){document.getElementById("ICContainer").style.display=""; loadInstantChat();} /* optional */
+                if (window.location.hash.length == webSessionIdLength + 1){document.getElementById("ICContainer").style.display=""; loadInstantChat();} /* optional */
+            }
+        </script>
+    </head>
 
-  <script type="text/javascript">
-    function loadInstantChat() {
+ <style media="screen">
 
-      var ICLoader = new RescueInstantChatLoader();
+    body{
 
-      ICLoader.ICContainer = "ICContainer";
-
-      ICLoader.HostedCSS = "https://secure.logmeinrescue.com/InstantChat/Standard/InstantChat.css";
-
-      ICLoader.HostedLanguagesForChatOnlyMode = "https://secure.logmeinrescue.com/InstantChat/LanguagesForChatOnlyMode.js"; <
-      head >
-        ICLoader.HostedLanguagesForAppletMode = "https://secure.logmeinrescue.com/InstantChat/LanguagesForAppletMode.js";
-
-      ICLoader.PrivateCode = document.getElementById("Code").value;
-
-      ICLoader.Tracking0 = ""; /* optional */
-
-      ICLoader.Language = ""; /* optional */
-
-      ICLoader.PostMessageTargetOrigin = ""; /* optional (For implementation details, see the LogMeIn Rescue Customization and Integration Guide) */
-
-      ICLoader.HostedErrorHandler = function(ErrorName) {} /* optional */
-
-      ICLoader.Start();
-    }
-
-    function handleRebootOrRefresh() {
-
-      if ((window.location + "").indexOf("rescuewebsessionid") != -1) {
-        document.getElementById("ICContainer").style.display = "";
-        loadInstantChat();
-      } /* optional */
-
-      if (window.location.hash.length == webSessionIdLength + 1) {
-        document.getElementById("ICContainer").style.display = "";
-        loadInstantChat();
-      } /* optional */
-
-    }
-  </script>
 
 
 
-  <!--CSS Bootstrap-->
+    }
+       input[type=text]{
 
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/font-awesome.css">
+       width:180px;
+       margin-top: 10px;
+      }
 
-  <!--popup.css-->
-
-</head>
-
-<body onload="handleRebootOrRefresh();">
-  <!-- Button trigger modal -->
+ </style>
 
 
 
-   <br>
-  <!--<h1 class="text-center text-uppercase">Seja bem ao ajuda Kadina</h1>-->
-  <center><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    <h4 class="text-uppercase">Clique para Ajuda Kadina</h4>
-  </button></center>
+    <body onload="handleRebootOrRefresh();">
 
-  <br>
+       <center><img class="img-responsive img-thumbnail" src="imagen/kadina_logo.jpg" width="240" height="120"alt=""></center>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header" style="border:none;">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <!--<h4 class="modal-title" id="myModalLabel">Ajuda Kadina</h4>-->
-          <center><img class="img-responsive img-thumbnail"src="imagen/kadina_logo.jpg" alt="Logo da Empresa Kadina" width="280" height="120"></center>
-        </div>
-        <div class="modal-body" style="border:none!important">
+         <div class="container" style="margin-top:30px;">
 
-          <div class="">
+             <div class="col-xs-12 col-sm-12 col-md-6  col-xs-offset-6 col-lg-2 col-xs-offset-4 ">
 
-           <form style="text-decoration:none;">
+             <div class="form-group">
 
-               <div class="form-group">
+                <label  class="text-center"for="">Ajuda Kadina</label><br>
+                <span>Insira seu código de 6 dígitos</span><input id="Code" class="form-control" type="text" width="20px"><br>
+
+                <input type="button" value="Conectar ao técnico" onclick="document.getElementById('ICContainer').style.display=''; loadInstantChat();" />
+                <div id="ICContainer" style="position: absolute; center: 0px; top: 0px; width: 400px; height: 500px; display: none"></div>
+            </div>
+         </div>
+       </div>
+    </body>
 
 
-
-               <ul>
-
-
-                 <li><span style="text-decorantion-none;"class="text-left text-info">Insira seu código de 6 dígitos </span> <i class="fa fa-arrow-right" aria-hidden="true"></i> <br><input col-xs-12 col-sm-12 col-md-6 col-lg-6 id="Code" type="text" class="form-control" placeholder="Digite o código"></li>
-
-                 <br>
-
-                 <li><span style="text-decorantion-none;"class="text-left text-info">Clique aqui para acessar</span> <i class="fa fa-user-o" aria-hidden="true"></i> <br> <input type="button"  class="btn btn-primary" value="Conectar ao técnico" onclick="document.getElementById('ICContainer').style.display=''; loadInstantChat();"/></li>
-
-                 <!--<div id="ICContainer" style="position: absolute; left: 0px; top: 0px; width: 400px; height: 500px; display: none"></div>-->
-
-               </ul>
-
-                 </div>
-
-           </form>
-
-             </div>
-
-        </div>
-        <div class="modal-footer"style="border:none;">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-          <!--<button type="button" class="btn btn-primary">Salvar mudanças</button>-->
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-  <script src="js/bootstrap.min.js"></script>
-
-
-</body>
-
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
 </html>
