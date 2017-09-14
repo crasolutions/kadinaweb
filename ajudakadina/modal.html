@@ -63,16 +63,56 @@
 
              <div class="col-xs-12 col-sm-12 col-md-6  col-xs-offset-6 col-lg-2 col-xs-offset-4 ">
 
-             <div class="form-group">
+
+               <div class="lo-support-box">
+               <p class="lo-support-name lo-txt-center">
+                 Acesso Remoto </p>
+               <p class="lo-support-text lo-txt-center">
+                 Insira seu Código de 6 dígitos </p>
+               <form name="logmeinsupport" action="https://secure.logmeinrescue.com/Customer/Code.aspx" method="post" class="ng-pristine ng-invalid ng-invalid-required">
+                 <div class="lo-support-code-wrapper">
+                   <input required="required" mask="999999" ng-model="Code" class="lo-support-code ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="Code" type="password">
+                 </div>
+                 <div class="lo-support-submit">
+                   <input class="lo-uppercase" value="Conectar" type="submit">
+                 </div>
+                 <input name="tracking0" maxlength="64" type="hidden">
+                 <!-- optional -->
+                 <input name="language" maxlength="5" type="hidden">
+                 <!-- optional -->
+                 <input name="hostederrorhandling" type="hidden">
+                 <!-- optional -->
+               </form>
+               <div class="lo-support-informations">
+                 <div class="block clearfix">
+                   <div class="icon key"></div>
+                   <div class="content">
+                     Obtenha seu código ligando para: <strong>0800 606 9127</strong>
+                   </div>
+                 </div>
+                 <a href="#" class="block link clearfix how-it-works">
+                                     <span class="icon help"></span>
+                                     <span class="content">Como funciona</span>
+                                 </a>
+                 <a href="#" class="block link clearfix">
+                                     <span class="icon reply"></span>
+                                     <span class="content">Voltar para <span class="path">Kadina Web</span></span>
+                                 </a>
+               </div>
+
+               </div>
+
+             <!--<div class="form-group">
 
                 <label  class="text-center"for="">Ajuda Kadina</label><br>
                 <span>Insira seu código de 6 dígitos</span><input id="Code" class="form-control" type="text" width="20px"><br>
 
-                <input type="button" value="Conectar ao técnico" onclick="document.getElementById('ICContainer').style.display=''; loadInstantChat();" />
-                <div id="ICContainer" style="position: absolute; center: 0px; top: 0px; width:820px; height:720px; display: none"></div>
+              <input type="button" value="Conectar ao técnico" onclick="document.getElementById('ICContainer').style.display=''; loadInstantChat();" />
+                  <a href="LogMeInRescueTechnicianConsoleApp_Next.msi" download><input class="btn btn-primary" type="button" name="" value="Conectar"></a>
+                <div id="ICContainer" style="position: absolute; center: 0px; top: 0px; width:820px; height:720px; display: none"></div>-->
             </div>
          </div>
-       </div>
+
     </body>
 
 
